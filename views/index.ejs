@@ -1,0 +1,85 @@
+<%- include('partials/header'); %>
+
+    <body>
+        <!-- Header -->
+        <header class="header-custom text-white text-center py-5 mb-4">
+            <div class="container">
+                <h1 class="display-4 fw-bold" style="color: black">
+                    <i class="bi bi-journal-richtext me-3"></i>Core Blog
+                </h1>
+                <p class="lead" style="color: black">Share your thoughts with the world</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Blog Posts Container -->
+            <div id="blogPosts">
+                <div class="card no-posts-card text-center py-5" style="background-color: #ffffff;">
+                    <div class="card-body">
+                        <i class="bi bi-chat-quote display-1 text-muted mb-3"></i>
+                        <h3 class="card-title">Welcome to Core Blog!</h3>
+                        <p class="card-text text-muted">No blog posts yet. Click the "Create Blog" button to get
+                            started!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Create Blog Button -->
+        <button class="btn btn-primary btn-lg floating-btn rounded-pill" id="createBlogBtn" data-bs-toggle="modal"
+            data-bs-target="#blogModal" style="background-color: #1E3A8A; border-color: #1E3A8A;">
+            <i class="bi bi-plus-circle me-2"></i>Create Blog
+        </button>
+
+        <!-- Bootstrap Modal for Creating/Editing Blog Post -->
+        <div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header text-white">
+                        <h1 class="modal-title fs-5" id="blogModalLabel">
+                            <i class="bi bi-pencil-square me-2"></i>Create New Blog Post
+                        </h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body p-4">
+                        <form id="blogForm">
+                            <div class="mb-4">
+                                <label for="postTitle" class="form-label fw-bold">
+                                    <i class="bi bi-type me-1"></i>Post Title
+                                </label>
+                                <input type="text" class="form-control form-control-lg" id="postTitle" name="postTitle"
+                                    required placeholder="Enter your blog title..." maxlength="100">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="postContent" class="form-label fw-bold">
+                                    <i class="bi bi-textarea-t me-1"></i>Post Content
+                                </label>
+                                <textarea class="form-control" id="postContent" name="postContent" rows="8" required
+                                    placeholder="Write your blog content here..." maxlength="5000"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle me-1"></i>Discard
+                        </button>
+                        <button type="submit" form="blogForm" class="btn btn-primary"
+                            style="background-color: #1E3A8A; border-color: #1E3A8A;">
+                            <i class="bi bi-check-circle me-1"></i>Publish Blog
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+<!-- style="background-color: #1E3A8A; border-color: #1E3A8A;" -->
+
+
+<%- include('partials/footer'); %>
